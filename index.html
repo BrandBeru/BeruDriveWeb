@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beru Drive</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript" src="src/assets/main.js"></script>
+</head>
+
+<body>
+    <nav class="header">
+        <div class="logo">
+            <h1>Beru</h1>
+        </div>
+        <div class="search-bar">
+            <input id="search" placeholder="Buscar en Drive" type="text">
+        </div>
+        <div class="user">
+            <div class="account-info">
+                <h3 id="username">User Name</h3>
+                <h4 id="email">email@email.com</h4>
+            </div>
+            <img id="picture" src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="" srcset=""
+                onclick="handleAuthClick()">
+        </div>
+    </nav>
+    <div class="container">
+
+        <div class="status">
+            <ul class="list">
+                <button>Mi unidad</button>
+                <button>Recientes</button>
+                <button>Destacados</button>
+                <button>Papelera</button>
+                <button>Almacenamiento</button>
+            </ul>
+        </div>
+        <div class="unity">
+            <h1>Mi unidad</h1>
+            <div class="suggest">
+                <h3>Sugerido</h3>
+            </div>
+            <div class="content">
+                <label for="myfile">Select a file:</label>
+                <input type="file" id="files" name="myfile">
+                <button onclick="upload()">
+                    send
+                </button>
+                <button onclick="listFiles()">Refresh</button>
+                <table id="table">
+                    <tr>
+                        <th>id</th>
+                        <th>Name</th>
+                        <th>Modification</th>
+                        <th>Size</th>
+                        <th>Actions</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="info">
+
+        </div>
+    </div>
+    <div class="alert" id="alert">
+        <div class="content">
+            <h1>Signin Google account before using this application</h1>
+            <button onclick="handleAuthClick()"><i class="fa fa-google"></i> Sign in</button>
+        </div>
+    </div>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+</body>
+
+</html>
